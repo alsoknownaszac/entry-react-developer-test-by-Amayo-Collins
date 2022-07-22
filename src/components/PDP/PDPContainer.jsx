@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { ContainerDiv, ProductDescription } from "./PDPContainer.styled";
 import ProductDetails from "./ProductDetails";
-import DOMPurify from "dompurify";
 import { connect } from "react-redux";
 import {
   addToCart,
@@ -142,7 +141,7 @@ class PDPContainer extends Component {
               ADD TO CART
             </button>
           )}
-          {/* dompurify sanitizing the description before displaying as html */}
+          {/* description is displayed as html */}
           <ProductDescription>
             <Interweave content={description} />
           </ProductDescription>
