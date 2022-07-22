@@ -10,7 +10,7 @@ export const ContainerDiv = styled.div`
     .other-images-container {
       width: 80px;
       margin-right: 40px;
-      height: 610px;
+      height: 511px;
       overflow-y: scroll;
       ::-webkit-scrollbar {
         width: 0px;
@@ -28,7 +28,7 @@ export const ContainerDiv = styled.div`
     }
     .main-image-container {
       width: 610px;
-      height: 610px;
+      height: 511px;
       overflow-y: scroll;
       ::-webkit-scrollbar {
         width: 0px;
