@@ -93,3 +93,8 @@ export const LogoImg = styled.img.attrs(() => ({
   position: absolute;
   left: 50%;
 `;
+
+export const CartIcon = styled.img.attrs(() => ({
+  alt: "cartIconNav",
+  src: "/cartIconNav.svg",
+}))``;

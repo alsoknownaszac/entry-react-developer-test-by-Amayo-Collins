@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import BasicSelect from "../Basic/BasicSelect";
-import { BsCart2 as CartIcon } from "react-icons/bs";
 import BasicModal from "../Basic/BasicModal";
 import CartContainer from "../Cart/CartContainer";
 import { connect } from "react-redux";
@@ -16,6 +15,7 @@ import {
   ActionsWrapper,
   CartWrapper,
   BagContainer,
+  CartIcon,
 } from "./Nav.styled";
 import { withRouter } from "../../utility/withRouter";
 import { useCartSum } from "../../utility/useCartSum";
@@ -27,7 +27,7 @@ import { ErrorHandling } from "../Container/ErrorHandling.styled";
 const Cart = ({ cartItems }) => {
   return (
     <CartWrapper>
-      <CartIcon size="20px" className="icon" />
+      <CartIcon />
       <div className="count noselect">{cartItems}</div>
     </CartWrapper>
   );

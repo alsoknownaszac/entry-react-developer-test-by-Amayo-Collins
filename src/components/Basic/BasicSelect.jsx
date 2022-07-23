@@ -37,6 +37,8 @@ export default class BasicSelect extends Component {
   }
 
   render() {
+    const { currency, query, changeCurrency } = this.props;
+
     return (
       <Select>
         <SelectButton
@@ -46,17 +48,18 @@ export default class BasicSelect extends Component {
             }))
           }
         >
-          <Input selected={this.props.currency.symbol} />
+          <Input selected={currency.symbol} />
           <Icon>{this.state.open === false ? <ArrowDown /> : <ArrowUp />}</Icon>
         </SelectButton>
         {this.state.open && (
           <SelectOption ref={this.wrapperRef}>
-            {this.props.query.map((item, itemIdx) => (
+            {query.map((item, itemIdx) => (
               <SelectOptionList
+                selected={currency.symbol === item.symbol}
                 key={itemIdx}
                 value={item.text}
                 onClick={() => {
-                  this.props.changeCurrency(item);
+                  changeCurrency(item);
                   this.setState({
                     open: false,
                   });

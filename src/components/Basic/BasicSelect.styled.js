@@ -49,6 +49,7 @@ export const SelectOptionList = styled.li`
   padding: 8px 0px;
   text-align: center;
   cursor: pointer;
+  background: ${({ selected }) => (selected ? `#eeeeee` : `none`)};
   &:hover {
     background: #eeeeee;
   }
