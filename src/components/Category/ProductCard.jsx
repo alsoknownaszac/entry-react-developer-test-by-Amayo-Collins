@@ -75,18 +75,18 @@ class ProductCard extends Component {
     // product with same attributes stack in the cart, otherwise a product with different attributes appears as separate cart items.
     function HandleAddToCart() {
       productObj.id = productObj.id + "-" + Math.floor(Math.random() * 20);
+      let id;
       let cartIncludes = cart.some((item) => {
         let slctAttr = Object.keys(item.selectedAttributes);
         let prdAttr = Object.keys(productObj.selectedAttributes);
+        id = item.id;
         return (
-          item.id === id &&
+          item.brand === productObj.brand &&
           item.selectedAttributes[slctAttr] ===
             productObj.selectedAttributes[prdAttr]
         );
       });
-      cartIncludes
-        ? incrementProductQuantity(productObj.id)
-        : addToCart(productObj);
+      cartIncludes ? incrementProductQuantity(id) : addToCart(productObj);
     }
 
     return (
