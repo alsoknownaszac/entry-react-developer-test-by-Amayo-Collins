@@ -13,7 +13,6 @@ import {
 import { clearAttr } from "../../features/selectedAttributes/selectedAttrSlice";
 import { withNavigate } from "../../utility/withNavigate";
 import { Interweave } from "interweave";
-import { ImgWrapper } from "../Category/ProductCard.styled";
 
 class PDPContainer extends Component {
   constructor(props) {
