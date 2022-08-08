@@ -18,6 +18,7 @@ class PDP extends Component {
         variables={{
           productId: id,
         }}
+        fetchPolicy={"no-cache"}
       >
         {({ loading, error, data }) => {
           if (loading) return <ErrorHandling>Loading...</ErrorHandling>;

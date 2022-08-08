@@ -26,21 +26,6 @@ export const ContainerDiv = styled.div`
         }
       }
     }
-    .main-image-container {
-      width: 610px;
-      height: 511px;
-      overflow-y: scroll;
-      ::-webkit-scrollbar {
-        width: 0px;
-      }
-      .main-image {
-        height: 100%;
-        width: 100%;
-        .imgs {
-          width: 100%;
-        }
-      }
-    }
   }
   .product-details {
     grid-column: span 1 / span 1;
@@ -83,5 +68,31 @@ export const ProductDescription = styled.div`
   overflow-y: auto;
   li {
     margin-bottom: 18px;
+  }
+`;
+
+export const MainImage = styled.div`
+  width: 610px;
+  position: relative;
+  background: ${({ outOfStock }) => (outOfStock ? `#ffffff` : `none`)};
+  opacity: ${({ outOfStock }) => (outOfStock ? `0.5` : `none`)};
+  .imgs {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  .out-of-stock-text {
+    display: ${({ outOfStock }) => (outOfStock ? `flex` : `none`)};
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    font-family: "Raleway";
+    font-weight: 400;
+    font-size: 24px;
+    color: #8d8f9a;
   }
 `;

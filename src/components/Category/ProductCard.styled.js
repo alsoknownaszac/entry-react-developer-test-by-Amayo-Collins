@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 export const ProductWrapper = styled.div`
   position: relative;
-
   padding: 16px;
   &:hover {
     box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.19);
@@ -27,7 +26,7 @@ export const ImgWrapper = styled.div`
   opacity: ${({ outOfStock }) => (outOfStock ? `0.5` : `none`)};
   margin-bottom: 24px;
   width: 100%;
-  height: 320px;
+  height: 330px;
   .img {
     position: relative;
     width: 100%;

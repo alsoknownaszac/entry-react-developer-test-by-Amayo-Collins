@@ -43,7 +43,7 @@ class CartContainer extends Component {
       brand,
       quantity,
       selectedAttributes,
-      cartPrices,
+      prices,
     } = productData;
 
     return (
@@ -63,7 +63,7 @@ class CartContainer extends Component {
             productBrand={brand}
             productName={name}
             attributes={attributes}
-            prices={cartPrices}
+            prices={prices}
             selectedAttrCart={selectedAttributes}
           />
           <div className="cart-order-container">

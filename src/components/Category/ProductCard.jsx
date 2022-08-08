@@ -52,12 +52,6 @@ class ProductCard extends Component {
 
     const { open } = this.state;
 
-    // attributes selected by user is store in the attrData variable
-    let attrData;
-    attributes.forEach((val) => {
-      return (attrData = { ...attrData, [val.id]: val.items[0].value });
-    });
-
     // product object to be added by the user to the cart
     const productObj = {
       id,
@@ -68,12 +62,18 @@ class ProductCard extends Component {
       attributes,
       quantity: 1,
       cartPrices: prices,
-      selectedAttributes: attrData,
     };
 
     //function to add a product to the cart
     // product with same attributes stack in the cart, otherwise a product with different attributes appears as separate cart items.
+
     function HandleAddToCart() {
+      attributes.forEach((val) => {
+        return (productObj.selectedAttributes = {
+          ...productObj.selectedAttributes,
+          [val.id]: val.items[0].value,
+        });
+      });
       productObj.id = productObj.id + "-" + Math.floor(Math.random() * 20);
       let id;
       let cartIncludes = cart.some((item) => {
@@ -82,6 +82,7 @@ class ProductCard extends Component {
         id = item.id;
         return (
           item.brand === productObj.brand &&
+          item.name === productObj.name &&
           item.selectedAttributes[slctAttr] ===
             productObj.selectedAttributes[prdAttr]
         );

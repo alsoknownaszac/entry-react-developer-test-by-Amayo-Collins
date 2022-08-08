@@ -20,8 +20,9 @@ class Category extends Component {
             title: category,
           },
         }}
+        fetchPolicy={"no-cache"}
       >
-        {({ loading, error, data }) => {
+        {({ loading, error, data, refetch }) => {
           if (loading) return <ErrorHandling>Loading...</ErrorHandling>;
           if (error)
             return <ErrorHandling>Something went wrong: {error}</ErrorHandling>;

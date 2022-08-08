@@ -9,7 +9,6 @@ export const GET_PRODUCTS_BY_CATEGORY = gql`
         name
         inStock
         gallery
-        category
         attributes {
           id
           name
@@ -27,6 +26,7 @@ export const GET_PRODUCTS_BY_CATEGORY = gql`
           amount
         }
         brand
+        category
       }
     }
   }

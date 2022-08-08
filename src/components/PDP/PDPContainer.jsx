@@ -1,5 +1,9 @@
 import React, { Component } from "react";
-import { ContainerDiv, ProductDescription } from "./PDPContainer.styled";
+import {
+  ContainerDiv,
+  MainImage,
+  ProductDescription,
+} from "./PDPContainer.styled";
 import ProductDetails from "./ProductDetails";
 import { connect } from "react-redux";
 import {
@@ -9,6 +13,7 @@ import {
 import { clearAttr } from "../../features/selectedAttributes/selectedAttrSlice";
 import { withNavigate } from "../../utility/withNavigate";
 import { Interweave } from "interweave";
+import { ImgWrapper } from "../Category/ProductCard.styled";
 
 class PDPContainer extends Component {
   constructor(props) {
@@ -68,21 +73,20 @@ class PDPContainer extends Component {
     //function to add a product to the cart
     // product with same attributes stack in the cart, otherwise a product with different attributes appears as separate cart items.
     function HandleAddToCart() {
-      productObj.id = productObj.id + "-" + Math.floor(Math.random() * 20);
       let id;
+      productObj.id = productObj.id + "-" + Math.floor(Math.random() * 20);
       let cartIncludes = cart.some((item) => {
         let slctAttr = Object.keys(item.selectedAttributes);
         let prdAttr = Object.keys(productObj.selectedAttributes);
         id = item.id;
         return (
           item.brand === productObj.brand &&
+          item.name === productObj.name &&
           item.selectedAttributes[slctAttr] ===
             productObj.selectedAttributes[prdAttr]
         );
       });
       cartIncludes ? incrementProductQuantity(id) : addToCart(productObj);
-      //navigate the product list page
-      navigate("/");
     }
 
     return (
@@ -103,16 +107,15 @@ class PDPContainer extends Component {
                 )
             )}
           </div>
-          <div className="main-image-container">
-            {/* main image */}
-            <div key={this.state.firstImg.imgUrl} className="main-image">
-              <img
-                src={this.state.firstImg.imgUrl}
-                alt={this.state.firstImg.imgUrl}
-                className="imgs"
-              />
-            </div>
-          </div>
+          {/* main image */}
+          <MainImage outOfStock={!inStock}>
+            <img
+              src={this.state.firstImg.imgUrl}
+              alt={this.state.firstImg.imgUrl}
+              className="imgs"
+            />
+            <div className="out-of-stock-text">OUT OF STOCK</div>
+          </MainImage>
         </div>
         <div className="product-details">
           {/* product details passed as a component */}
