@@ -42,7 +42,6 @@ class PDPContainer extends Component {
       addToCart,
       incrementProductQuantity,
       cart,
-      navigate,
     } = this.props;
 
     const {

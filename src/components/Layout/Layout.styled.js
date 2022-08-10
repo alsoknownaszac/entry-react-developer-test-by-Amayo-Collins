@@ -14,9 +14,9 @@ export const LayoutContent = styled.div`
   overflow-x: hidden;
   .content {
     padding-top: 80px;
-    padding-left: 101px;
-    padding-right: 101px;
     padding-bottom: 101px;
+    width: 1238px;
+    margin: auto;
   }
 `;
 

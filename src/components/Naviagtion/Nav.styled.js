@@ -3,15 +3,15 @@ import styled from "styled-components";
 
 export const NavFixed = styled.div`
   position: fixed;
+  background: #ffffff;
   left: 0;
   right: 0;
   z-index: 5;
 `;
 
 export const NavWrapper = styled.div`
-  background: #ffffff;
-  padding-left: 101px;
-  padding-right: 101px;
+  width: 1238px;
+  margin: auto;
   height: 80px;
   display: flex;
   align-items: center;

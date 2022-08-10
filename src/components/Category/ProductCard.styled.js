@@ -17,7 +17,7 @@ export const ProductDiv = styled(Link)`
   color: #1d1f22;
   text-decoration: none;
   cursor: pointer;
-  grid-column: span 1 / span 1;
+  height: fit-content;
 `;
 
 export const ImgWrapper = styled.div`
@@ -25,13 +25,14 @@ export const ImgWrapper = styled.div`
   background: ${({ outOfStock }) => (outOfStock ? `#ffffff` : `none`)};
   opacity: ${({ outOfStock }) => (outOfStock ? `0.5` : `none`)};
   margin-bottom: 24px;
-  width: 100%;
+  width: 354px;
   height: 330px;
+  overflow: hidden;
   .img {
     position: relative;
     width: 100%;
-    max-height: 100%;
-    object-fit: fill;
+    height: 100%;
+    object-fit: cover;
   }
   .out-of-stock-text {
     display: ${({ outOfStock }) => (outOfStock ? `flex` : `none`)};

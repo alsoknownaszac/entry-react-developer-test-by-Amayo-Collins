@@ -9,7 +9,7 @@ export const ContainerDiv = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: ${({ lgCart }) => (lgCart ? "35px" : "32px")};
+    height: fit-content;
     .cart-order-container {
       height: ${({ lgCart }) => (lgCart ? "288px" : "190px")};
       display: flex;
@@ -32,7 +32,6 @@ export const ContainerDiv = styled.div`
             color: #ffffff;
           }
         }
-
         .cart-quantity {
           font-weight: 500;
           margin: auto;
@@ -41,11 +40,12 @@ export const ContainerDiv = styled.div`
       .cart-images-container {
         position: relative;
         width: ${({ lgCart }) => (lgCart ? "200px" : "121px")};
-        height: 100%;
+        height: fit-content;
         .cart-images {
           position: relative;
-          width: inherit;
-          height: inherit;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
         }
         .change-image-container {
           position: absolute;

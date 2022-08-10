@@ -1,34 +1,29 @@
 import styled from "styled-components";
 
 export const ContainerDiv = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  column-gap: 100px;
+  display: flex;
+  gap: 100px;
   .product-image-container {
-    grid-column: span 2 / span 2;
+    display: flex;
+    gap: 40px;
     display: flex;
     .other-images-container {
       width: 80px;
-      margin-right: 40px;
-      height: 511px;
-      overflow-y: scroll;
-      ::-webkit-scrollbar {
-        width: 0px;
-      }
+      height: fit-content;
       .other-images {
         cursor: pointer;
         width: inherit;
-        height: 80px;
-        margin-bottom: 40px;
+        height: inherit;
         .imgs {
-          height: 100%;
           width: 100%;
+          height: inherit;
+          margin-bottom: 40px;
         }
       }
     }
   }
   .product-details {
-    grid-column: span 1 / span 1;
+    width: 292px;
     .add-to-cart-btn {
       cursor: pointer;
       border: none;
@@ -66,6 +61,10 @@ export const ProductDescription = styled.div`
     width: 0px;
   }
   overflow-y: auto;
+  h1,
+  h3 {
+    line-height: 150%;
+  }
   li {
     margin-bottom: 18px;
   }
@@ -73,12 +72,13 @@ export const ProductDescription = styled.div`
 
 export const MainImage = styled.div`
   width: 610px;
+  height: fit-content;
   position: relative;
   background: ${({ outOfStock }) => (outOfStock ? `#ffffff` : `none`)};
   opacity: ${({ outOfStock }) => (outOfStock ? `0.5` : `none`)};
   .imgs {
     width: 100%;
-    height: 100%;
+    height: inherit;
     position: relative;
   }
   .out-of-stock-text {

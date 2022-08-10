@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const CartSummaryContainer = styled.div`
+  margin-top: ${({ lgCart }) => (lgCart ? "35px" : "32px")};
   width: ${({ lgCart }) => (lgCart ? "279px" : "")};
   .cart-summary {
     display: flex;

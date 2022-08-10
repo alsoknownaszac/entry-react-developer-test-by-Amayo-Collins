@@ -24,7 +24,7 @@ export const ModalContent = styled.div`
   background: #ffffff;
   right: 72px;
   margin-left: auto;
-  max-height: 450px;
+  max-height: 480px;
   width: 325px;
   padding: 32px 16px;
   scroll-behavior: smooth;
